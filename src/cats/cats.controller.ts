@@ -1,8 +1,13 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get, Post, Res } from '@nestjs/common';
 import { Response } from 'express';
 
 @Controller('cats')
 export class CatsController {
+  @Post()
+  create(): string {
+    return 'This action adds a new cat';
+  }
+
   @Get()
   /* @HttpCode(200) // 200 is the default. This decorator allows customization*/
   findAll(): string {
