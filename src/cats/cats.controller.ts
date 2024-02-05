@@ -5,8 +5,8 @@ import { Response } from 'express';
 export class CatsController {
   @Get()
   /* @HttpCode(200) // 200 is the default. This decorator allows customization*/
-  findAll(): object {
-    return { data: 'This action returns all cats' };
+  findAll(): string {
+    return 'This action returns all cats';
   }
 
   /* 
@@ -15,7 +15,7 @@ export class CatsController {
   without disabling the nestjs response object as the default for the remainder
   of this route.
   */
-  @Get('breeds')
+  @Get('breedsv0')
   findAll2(@Res({ passthrough: true }) response: Response): Response {
     return response.status(200).send('Siamese cat');
   }
